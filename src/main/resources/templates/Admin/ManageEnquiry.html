@@ -1,0 +1,51 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header bg-success p-0 text-white">
+						<h3 class="fw-bold text-center">Enquiry</h3>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Sr.no</th>
+											<th>Name</th>
+											<th>Gender</th>
+											<th>Email</th>
+											<th>Subject</th>
+											<th>Message</th>
+											<th>Action</th>
+										</tr>
+
+									</thead>
+									<tbody>
+										<tr th:each="e,srno:${enquiryList}">
+											<td th:text="${srno.index}">#1</td>
+											<td th:text="${e.name}">ABCD</td>
+											<td th:text="${e.gender}">Gender</td>
+											<td th:text="${e.email}">ex@gmail.com</td>
+											<td th:text="${e.subject}">Subject</td>
+											<td th:text="${e.message}">Message</td>
+											<td>
+												
+												<a href="#" class="btn btn-danger btn-sm">Delete</a>
+											</td>
+										</tr>
+									</tbody>
+
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<html th:fragment="layout(content)">
+	<head>
+		<link href="css/bootstrap.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		        crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+	<body>
+		
+		<div class="row sticky-top">
+			<div class="col-sm-12 p-0">
+				
+		
+		<nav class="navbar navbar-expand-lg bg-white">
+		  <div class="container-fluid">
+			<img src="images/image1.png" style="height: 100px; margin-left: 15px;">
+		     		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="/">Home</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="/AboutUs">About</a>
+		        </li>			    
+				  <li class="nav-item">
+			  	<a class="nav-link" href="/Contact">Contact</a>
+			  		        </li>
+							<li class="nav-item">
+				<a class="nav-link" href="/FarmerRegistration">FarmerRegistration</a>
+				 </li>
+				
+		        <li class="nav-item dropdown">
+		          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            Login
+		          </a>
+		          <ul class="dropdown-menu">
+		            <li><a class="dropdown-item" href="/FarmerLogin">Farmer</a></li><hr/>
+		            <li><a class="dropdown-item" href="/MerchantLogin">Merchant</a></li>
+		            <li><hr class="dropdown-divider"></li>
+		            <li><a class="dropdown-item" href="/AdminLogin">Admin</a></li>
+		          </ul>
+		        </li>
+		        
+		      </ul>
+		      <form class="d-flex" role="search">
+		       
+				<a href="/merchantRegistration"  class="btn btn-success">Be a Merchant</a>
+				<!--<button class=" btn btn-outline bg-success mx-5 " type="submit">Be A Merchant</button>-->
+		      </form>
+		    </div>
+		  </div>
+		</nav>
+		</div>
+			</div>
+			
+		<div th:replace="${content}"></div>
+		
+		<!--footer start  -->
+
+		    <div class="row bg-dark">
+		        <div class="col-sm-11 mx-auto ">
+		            <div class="row">
+		                <div class="col-sm-3 text-light">
+		                    <h4 class="mt-3"> Agritrade Hub</h4>
+		                    
+		                    <p>Jankipuram Lucknow  <br>
+		                    Uttar Pradesh 226021</p>
+		                    <p><span class="fw-bold">Phone: </span> +91 98765433210 <br>
+		                    <span class="fw-bold"> Email: </span> info@agritradehub.com
+		                    </p>
+		                </div>
+		                <div class="col-sm-3 text-light ">
+		                    <h4 class="mt-3 ">
+		                        Userful links
+		                    </h4>
+		                    <ul style="list-style-type: none;">
+		                        <li>
+		                        <a href="#" class="text-light text-decoration-none">Home</a>
+		                        </li>
+		                         <li>
+		                        <a href="#" class="text-light text-decoration-none">About Us</a>
+		                        </li>
+		                         <li>
+		                        <a href="#" class="text-light text-decoration-none">Services</a>
+		                        </li>
+		                         <li>
+		                        <a href="#" class="text-light text-decoration-none">Terms of services</a>
+		                        </li>
+		                         <li>
+		                        <a href="#" class="text-light text-decoration-none">Privacy policy</a>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <div class="col-sm-3 text-light">
+		                    <h4 class="mt-3">
+		                        Our Services
+		                    </h4>
+		                    <ul style="list-style-type: none;">
+		                        <li>
+		                          <a href="#" class="text-light text-decoration-none">Secure Login</a>  
+		                        </li>
+		                          <li>
+		                          <a href="#" class="text-light text-decoration-none">Live Product Listing</a>  
+		                        </li>
+		                          <li>
+		                          <a href="#" class="text-light text-decoration-none">Easy order Managment</a>  
+		                        </li>
+		                          <li>
+		                          <a href="#" class="text-light text-decoration-none">Marketing</a>  
+		                        </li>
+		                          <li>
+		                          <a href="#" class="text-light text-decoration-none">Category-wise Product Filtering</a>  
+		                        </li>
+		                    </ul>
+		                </div>
+		                <div class="col-sm-3 text-light">
+		                    <h4 class="mt-3">
+		                        Follow Us
+		                    </h4>
+		                    <ul style="list-style-type: none;">
+		                        <li>
+		                          <a href="#" class="text-light text-decoration-none"><i class="fa-brands fa-facebook"></i>Facebook</a>  
+		                        </li> 
+		                         <li>
+									
+		                          <a href="#" class="text-light text-decoration-none"><i class="fa-brands fa-twitter"></i>Twitter</a>  
+		                        </li>
+		                         <li>
+		                          <a href="#" class="text-light text-decoration-none"><i class="fa-brands fa-instagram"></i>Instagram</a>  
+		                        </li>
+		                         <li>
+		                          <a href="#" class="text-light text-decoration-none"> <i class="fa-solid fa-link"></i>Linkedin</a>  
+		                        </li>
+		                         <li>
+		                          <a href="#" class="text-light text-decoration-none"> <i class="fa-brands fa-youtube"></i>Youtube</a>  
+		                        </li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- copyright row -->
+		     <div class="row" style="background-color:#198754">
+		        <div class="col-sm-11 mx-auto ">
+		            <div class="row  text-light mt-3">
+		                <div class="col-sm-6">
+		                    <p> copyright <span class="fw-bold">MyWebsite.</span> All rigths Reserved <br>
+		                    Designed by <span class="text-dark">sandhya</span> Distributed by <span class="text-dark"> Softpro India</span></p>
+		                </div>
+		                <div class="col-sm-6"></div>
+		            </div>
+		        </div>
+		     </div>
+			 
+		    <!-- copyright row end -->
+		    <!--footer end  -->
+		<script src="js/bootstrap.bundle.js"></script>
+	</body>
+</html>

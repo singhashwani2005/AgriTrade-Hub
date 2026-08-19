@@ -1,0 +1,66 @@
+<html th:replace="~{base::layout(~{::main})}">
+
+
+
+<body>
+	<main>
+		<div class="row" style="background-image: url('images/hero_1.jpg');">
+			<div class="col-sm-12 py-5 bg-dark bg-opacity-50">
+				<h1 class="py-4 text-center text-white fw-bold display-4">Farmer Registration</h1>
+			</div>
+		</div>
+
+		<div class="row py-5 bg-success">
+			<div class="col-sm-9 mx-auto shadow p-4 px-5 rounded-5" style="background-color: rgb(0, 128, 64);">
+				<input type="hidden" id="msg" th:if="${msg}" th:value="${msg}">
+				<form method="post" th:object="${userDto}">
+
+					<div class="row">
+						<div class="col-sm-6 mb-4">
+							<Label class="fw-bold">Enter your Name</Label>
+							<input  th:field="${userDto.name}" type="text" placeholder="Farmer Name" class="form-control"
+								required="required" />
+						</div>
+						<div class="col-sm-6 mb-4">
+							<label class="fw-bold">Enter your Email</label>
+							<input th:field="${userDto.email}" type="text" placeholder="Your Email"
+								class="form-control" />
+						</div>
+						<div class="col-sm-6 mb-4">
+							<label class="fw-bold">Enter your Contact no.</label>
+							<input th:field="${userDto.contactNumber}" type="text" maxlength="10" pattern="\d{10}"
+								class="form-control" placeholder="Your contact no." />
+						</div>
+						<div class="col-sm-6 mb-4">
+							<label class="fw-bold">Enter your Aadhar no.</label>
+							<input th:field="${userDto.aadharNumber}" type="text" maxlength="12" pattern="\d{12}"
+								placeholder="Your aadhar no." class="form-control" />
+						</div>
+						<div class="col-sm-6 mb-4">
+							<label class="fw-bold">Enter Your Pancard no.</label>
+							<input th:field="${userDto.panCard}" type="text" placeholder="Your pancard no."
+								class="form-control" />
+						</div>
+						<div class="col-sm-6 mb-4">
+							<label class="fw-bold">Enter your password</label>
+							<input th:field="${userDto.password}" type="password" 	
+								placeholder="Your Password" class="form-control" />
+						</div>
+						<div class="col-sm-12 mb-4">
+							<label class="fw-bold">Enter Your permanent Address</label>
+							<input th:field="${userDto.address}"  type="textarea" placeholder="Your Address"
+								class="form-control" />
+						</div>
+						<div class="col-sm-12 mt-4 text-center">
+							<button type="submit" class="btn btn-success px-5">Register</button>
+						</div>
+					</div>
+			</div>
+			</form>
+		</div>
+		</div>
+		
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<html th:replace="~{base::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row bg-success">
+			<div class="col-sm-12">
+				<h1 class="text-center py-5 my-3">Contact Us</h1>
+			</div>
+		</div>
+		<!--start-->
+		<div class="row mt-5">
+		            <h2 class="text-center">
+		                Contact For Any Query
+		            </h2>
+		            <h4 class="text-center">
+		                Get in Touch, We Cherish all Interaction
+		            </h4>
+					</div>
+		<div class="row mt-4">
+			<div class="col-sm-4">
+				<div class="card p-4 text-center border-0">
+					<i class="fa-solid fa-phone-volume fa-4x text-success">
+					</i>
+					<h4 class="mt-3">
+						Call US
+					</h4>
+					<p>
+						+91 94150 25623
+						<br>
+
+						+91 94157 80361
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card p-4 text-center border-0">
+					<i class="fa-regular fa-envelope fa-4x text-success">
+					</i>
+					<h4 class="mt-3">
+						Mail Us
+					</h4>
+					<p>
+						info@iimmayodhya.org<br>
+						iimmayodhya@gmail.com
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card p-4 text-center border-0">
+					<i class="fa-solid fa-location-dot fa-4x text-success">
+					</i>
+					<h4 class="mt-3">
+						Find Us
+					</h4>
+					<p>
+						Dev Nagar Colony, Raibareli Road<br>
+						(Near Naveen Galla Mandi), Ayodhya (Faizabad)<br>
+						- 224001
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!--end-->
+		<div class="row">
+			<div class="col-sm-12 ">
+				<div class="row">
+					<div class="col-sm-6">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28458.94106576101!2d80.9266179743164!3d26.923557400000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd7e0637bf21%3A0x730fe46201abc68a!2sLalganj%20raebareli!5e0!3m2!1sen!2sin!4v1752841048996!5m2!1sen!2sin"
+							width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+					</div>
+					<div class="col-sm-6 bg-success mx-4 mb-4 mx-auto shadow p-4 py-5 rounded-5">
+						<form method="post" th:object="${enquiry}">
+							<div class="row ">
+								<div class="col-sm-12 mt-3">
+									<label>Enter Your Name</label>
+									<input type="text" th:field="${enquiry.name}" class="form-control" />
+								</div>
+								<div class="col-sm-12 mt-3">
+									<label>Select Your Gender</label>
+									<select th:field="${enquiry.gender}" class="form-control">
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+										<option value="Other">Other</option>
+									</select>
+								</div>
+								<div class="col-sm-12 mt-3">
+									<label> Enter Contact Number</label>
+									<input type="number" th:field="${enquiry.contactNo}" class="form-control">
+								</div>
+								<div class="col-sm-12 mt-3">
+									<table>Enter Your Email</table>
+									<input type="email" th:field="${enquiry.email}" class="form-control">
+
+								</div>
+								<div class="col-sm-12 mt-3">
+									<label>Enter Enquiry Subject</label>
+									<input type="text" th:field="${enquiry.subject}" class="form-control">
+								</div>
+								<div class="col-sm-12 mt-3">
+									<label>Enter Enquiry Meesage</label>
+									<textarea rows="2" class="form-control" th:field="${enquiry.message}"></textarea>
+								</div>
+								<div class="col-sm-12 mt-5 text-center">
+									<button type="submit" class="btn btn-light">Sumit</button>
+								</div>
+
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

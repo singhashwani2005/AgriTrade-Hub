@@ -1,0 +1,59 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<!--<div class="row">
+			<div class="col-sm-5 mx-auto">
+				<div class="card border-0 shadow">
+					<div class="card-header bg-success p-0 text-white">
+						<h3 class="fw-bold text-center">Add Category</h3>
+					</div>
+					<div class="card-body">
+						<form method="post" th:object="${categoryDto}" >
+							<label class="mt-3 fw-bold">Name of category</label>
+							<input th:field="${categoryDto.categoryName}" name="category" type="text" placeholder="Category Name" required="requird"
+								class="form-control rounded-0 border border-2 border-primary"  />
+							<div class="text-center">
+								<button type="submit" class="btn btn-success mt-5 px-4">Add Category</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>-->
+		<div class="row">
+					<div class="col-sm-12 bg-primary">
+						<h1 class="text-center py-4">Product Category</h1>
+					</div>
+				</div>
+
+				<div class="row py-5">
+
+					<div class="col-sm-5 mx-auto shadow p-5 bg-success">
+
+						<form method="post">
+
+							<div class="card p-5 border-primary">
+								<h3 class="text-center">Add Category Here</h3>
+								<label class="mt-3">Add Product</label>
+								<input  type="text" name="categoryName" placeholder="Product(Name)..."
+									class="form-control border-primary border-2 rounded-0 border" required="required">
+
+
+									<!--<class="form-control rounded-0 border border-primary border-2">-->
+									<div class="text-center">
+										<button type="submit" class="btn btn-primary mt-5 px-4">Submit
+
+										</button>
+
+									</div>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+	</main>
+</body>
+
+</html>

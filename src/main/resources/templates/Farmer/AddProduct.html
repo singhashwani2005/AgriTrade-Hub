@@ -1,0 +1,60 @@
+<html th:replace="~{Farmer/Farmerbase::layout(~{::main})}" >
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-9 mx-auto">
+				<div class="card">
+					<div class="card-header bg-success">
+						<h4 class="text-center fw-bold m-0">Add Product</h4>
+					</div>
+					<div class="card-body">
+						<form method="post" th:object="${product}" enctype="multipart/form-data" >
+							<div class="row">
+								<div class="col-sm-6 mb-3">
+									<label class="fw-bold">Enter Product Name</label>
+									<input th:field="${product.productName}" type="text" class="form-control" required
+										placeholder="Product Name...">
+								</div>
+								<div class="col-sm-6 mb-3">
+									<label class="fw-bold">Select Product Category</label>
+									<select th:field="${product.category}" class="form-control" required>
+										<option value="">---Select Category---</option>
+										<option th:each="cate:${categories}" th:text="${cate.categoryName}"
+											th:value="${cate.categoryName}">Option 1</option>
+										
+									</select>
+								</div>
+								<div class="col-sm-6 mb-3">
+									<label class="fw-bold">Enter Product Quantity</label>
+									<input th:field="${product.quentity}" type="text" class="form-control" required
+										placeholder="Product Quantity...">
+								</div>
+								<div class="col-sm-6 mb-3">
+									<label class="fw-bold">Enter Product Price(Price/Unit)</label>
+									<input th:field="${product.pricePerUnit}" type="number" class="form-control"
+										required placeholder="Product Price...">
+								</div>
+								<div class="col-sm-6 mb-3">
+									<label class="fw-bold">Offer In percentage</label>
+									<input th:field="${product.offerPrice}" type="number" class="form-control" required
+										placeholder="Ex:(2,5,10......)">
+								</div>
+								<div class="col-sm-6 mb-3">
+									<label class="fw-bold">Product Image</label>
+									<input type="file" name="Image" class="form-control" required
+										placeholder="Product Name...">
+								</div>
+								<div class="col-sm-12 my-3 text-center">
+									<button type="submit" class="btn btn-success">Add Product</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

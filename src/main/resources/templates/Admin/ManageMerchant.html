@@ -1,0 +1,119 @@
+<!--<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header bg-success p-0 text-white">
+						<h3 class="fw-bold text-center">Manage Merchants</h3>
+					</div>
+					<div class="card-body">
+						<div class="table-resposive">
+							<table class="table table-bordered" id="example">
+								<thead>
+									<tr>
+										<th>Sr.No</th>
+										<th>Profile Pic</th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Contact No</th>
+										<th>PAN Card No</th>
+										<th>Address</th>
+										<th>gst NO</th>
+										<th>Merchant Type</th>
+										<th>Reg.Date</th>
+										<th>Action</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="e,srno:${merchantList}">
+										<td th:text="${srno.index+1} ">#1</td>
+										<td class="text-center">@</td>
+										<td th:text="${e.name}">ABC</td>
+										<td th:text="${e.email}">Example@gmai.com</td>
+										<td th:text="${e.contactNumber}">98xxxxxxx78</td>
+										<td th:text="${e.panCard}">AQWR1234</td>
+										<td th:text="${e.address}">ADD</td>
+										<td th:text="${e.gstNo}">xersrr</td>
+										<td th:text="${e.merchantType}">Wholeseller</td>
+
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>-->
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header bg-success p-0 text-white">
+						<h3 class="fw-bold text-center">Manage Merchants</h3>
+					</div>
+					<div class="card-body">
+						<div class="table-resposive">
+							<table class="table table-bordered" id="example">
+								<thead>
+									<tr>
+										<th>Sr.No</th>
+										<th>Profile Pic</th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Contact No</th>
+										<th>PAN Card No</th>
+										<th>Address</th>
+										<th>GST NO</th>
+										<th>Merchant Type</th>
+										<th>Reg.Date</th>
+										<th>Action</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="e,srno:${merchantList}">
+										<td th:text="${srno.index+1} ">#1</td>
+										<td class="text-center">@</td>
+										<td th:text="${e.name}">ABC</td>
+										<td th:text="${e.email}">Example@gmai.com</td>
+										<td th:text="${e.contactNumber}">98xxxxxxx78</td>
+										<td th:text="${e.panCard}">AQWR1234</td>
+										<td th:text="${e.address}">ADD</td>
+										<td th:text="${e.gstNo}">xersrr</td>
+										<td th:text="${e.merchantType}">Wholeseller</td>
+
+										<td class="text-center">
+
+											<a th:href="@{MerchantStatus(id=${e.id})}" th:if="${e.status.name()=='PANDING'} "
+												class="btn btn-warning btn-sm " th:text="${e.status}"></a>
+											<a th:href="@{MerchantStatus(id=${e.id})}" th:if="${e.status.name()=='APPROVED'} "
+												class="btn btn-success btn-sm " th:text="${e.status}"></a>
+											<a th:href="@{MerchantStatus(id=${e.id})}" th:if="${e.status.name()=='DISABLED'} "
+												class="btn btn-warning btn-sm " th:text="${e.status}"></a>
+										</td>
+										<td>
+											<a href="#" class="btn btn-success btn-sm">Edit</a>
+											<a href="#" class="btn btn-warning btn-sm">Delete</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

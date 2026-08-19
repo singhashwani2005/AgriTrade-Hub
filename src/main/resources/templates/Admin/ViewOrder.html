@@ -1,0 +1,83 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header bg-success p-0 text-white">
+						<h3 class="fw-bold text-center text-white m-0">View order</h3>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered" id="example">
+								<thead>
+									<tr>
+										<th>Sr.No</th>
+										<th>Seller Name</th>
+										<th>Seller Contact</th>
+										<th>Seller Address</th>
+										<th>Buyer Name</th>
+										<th>Product Name</th>
+										
+										<th>Product Price</th>
+										<th>Quentity</th>
+										<th>Total Payment</th>
+										<th>Order Id</th>
+										<th>Order Date</th>
+										<th>Delivery Date</th>
+										<th>Status</th>
+
+									</tr>
+								</thead>
+								<!--<tbody>
+									<tr th:each="f,srno:${farmerList}">
+										<td th:text="${srno.index+1} " class="text-center">#1</td>
+										<td class="text-center">@</td>
+										<td th:text="${f.name}">ABCD</td>
+										<td th:text="${f.email}">ex@gmail.com</td>
+										<td th:text="${f.contactNumber}">1234567890</td>
+										<td th:text="${f.aadharNumber}">99xxxxxxxx98</td>
+										<td th:text="${f.panCard}">ASDF1234</td>
+										<td th:text="${f.address}">unknown </td>
+										<td th:text="${f.regDate}">DD/MM/YY</td>
+										<td class="text-center">
+											<a href="#" th:if="${f.status.name() =='PENDING'}" class="btn btn-warning btn-sm" th:text="${f.status}"></a>
+											<a href="#" th:if="${f.status.name() =='APPROVED'}" class="btn btn-success btn-sm" th:text="${f.status}"></a>
+											<a href="#" th:if="${f.status.name() =='DISABLED'}" class="btn btn-danger btn-sm" th:text="${f.status}"></a>
+										</td>
+										<td>
+											<a href="#" class="btn btn-success btn-sm">Edit</a>
+											<a th:href="@{DeleteFarmer(id=${f.id})}" onclick=" return confirm('Are you sure want to delete ?')" class="btn btn-danger btn-sm">Delete</a>
+										</td>
+									</tr>
+								</tbody>-->
+								<tbody>
+									<tr th:each="o, srno : ${orderList}">
+										  
+										<td th:text="${srno.index+1}"></td>
+										<td th:text="${o.order.farmer.name}"></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td th:text="${o.order.productName}"></td>
+										<td></td>
+										
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

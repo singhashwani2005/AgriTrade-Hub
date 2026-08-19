@@ -1,0 +1,46 @@
+<html th:replace="~{Merchant/Merchantbase::layout(~{::main})}">
+
+
+
+<body>
+	<main>
+		
+		
+		<div class="row">
+					<div class="col-sm-2  p-1">
+						<div class="card p-2">
+							<h5>📁 categories</h5>
+							<ul class="List-group">
+								<li class="List-item ">
+									<a href="Dashboard" class="border border border-success p-2 px-3 d-block fw-bold">All</a>
+								</li>
+								<li th:each="cate : ${categories}">
+									<a th:href="@{MerchantDashboard(category=${cate.categoryName})}"
+										th:text="${cate.categoryName}"
+										class="border border border-success p-2 px-3 d-block fw-bold">All</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-10">
+						<div class="row">
+							<div class="col-md-3" th:each="product : ${productList}">
+								<div class="card">
+									<div class="card-header">
+										<img alt="image not found" th:src="@{'/ProductImage/'+ ${product.productImage}}"
+											class="w-100">
+									</div>
+									<div class="card-body">
+										<h6>Product Name : <span th:text="${product.productName}"></span></h6>
+										<p> Seller : <span th:text="${product.farmer.name}"></span></p>
+										<a th:href="@{BuyProduct(id=${product.id})}" class="btn btn-success">Buy</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</main>
+</body>
+
+</html>

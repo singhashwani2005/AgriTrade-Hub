@@ -1,0 +1,97 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main>
+				<!-- Merchant Registration Start -->
+				<div class="container my-5">
+					<div class="text-center mb-4">
+						<h2 class="text-success fw-bold">Merchant Registration</h2>
+					</div>
+
+					<div class="card shadow-lg border-0">
+						<div class="row g-0">
+							<div class="col-lg-6 d-none d-lg-block">
+								<img src="images/hero_4.jpg" class="img-fluid rounded-start h-100" alt="Merchant">
+							</div>
+							<div class="col-lg-6">
+								<div class="card-body p-4">
+									<input type="hidden" id="msg" th:if="${msg}" th:value="${msg}">
+									<form method="post" th:object="${merchantDto}" >
+										
+										<div class="mb-3">
+											<label class="form-label">Owner Name</label>
+											<input th:field="${merchantDto.name}" type="text" class="form-control" placeholder="Enter Owner Name">
+										</div>
+										<div class="row mb-3">
+											<div class="col">
+												<label class="form-label">Email</label>
+												<input th:field="${merchantDto.email}" type="email" class="form-control" placeholder="Enter Email">
+											</div>
+											<div class="col">
+												<label class="form-label">Contact Number</label>
+												<input th:field="${merchantDto.contactNumber}" type="tel" class="form-control" placeholder="Contact Number">
+											</div>
+										</div>
+
+										<div class="row mb-3">
+											<div class="col">
+												<label class="form-label">Type of Merchant</label>
+												<select th:field="${merchantDto.merchantType}" class="form-select">
+													<option value="">Select</option>
+													<option value="Wholeseller">Wholeseller</option>
+													<option value="Retailer">Retailer</option>
+													<option value="Distributor">Distributor</option>
+													<option value="Exporter">Exporter</option>
+													<option value="Input Supplier">Input Supplier</option>
+												</select>
+											</div>
+											
+										</div>
+										<div class="row mb-3">
+											<div class="col">
+												<label class="form-label">GST Number</label>
+												<input th:field="${merchantDto.gstNo}" type="text" class="form-control" placeholder="GST Number">
+											</div>
+											<div class="col">
+												<label class="form-label">PAN Number</label>
+												<input th:field="${merchantDto.panCard}" type="text" class="form-control" placeholder="PAN Number">
+											</div>
+										</div>
+										<div class="row mb-3">
+											<div class="col">
+												<label  class="form-label">Password</label>
+												<input th:field="${merchantDto.password}" type="password" class="form-control" placeholder="Create Password">
+											</div>
+
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Business Address</label>
+											<textarea th:field="${merchantDto.address}" class="form-control" rows="2"
+												placeholder="Enter Complete Address"></textarea>
+										</div>
+
+										<div class="form-check mb-2">
+											<input class="form-check-input" type="checkbox"> I agree to the terms and conditions
+										</div>
+										<div class="form-check mb-2">
+											<input class="form-check-input" type="checkbox"> I allow sharing my contact info for
+											trade
+										</div>
+										<div class="form-check mb-4">
+											<input class="form-check-input" type="checkbox"> I confirm all submitted info is
+											correct
+										</div>
+										<div class="text-center">
+											<button type="submit" class="btn btn-success w-50">Submit</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Merchant Registration End -->
+
+			</main>
+			
+	</body>
+</html>
